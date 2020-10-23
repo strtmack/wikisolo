@@ -21,6 +21,13 @@ def current_user()
   find_user_by_id(session[:user_id])
 end
 
+def create_account(username, email, password)
+  password_hash = BCrypt::Password.create(params['password'])
+  sql = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3);"
+  run_sql(sql, [username, email, password_hash])
+end
+
+
 
 get '/' do
 
@@ -31,6 +38,16 @@ get '/' do
   }
 end
 
+
+get '/account/new' do
+  erb :create_account
+end
+
+
+post '/create_account' do
+  create_account(params['username'], params['email'], params['password'])
+  redirect '/'
+end
 
 get '/solo/new' do
   erb :new
