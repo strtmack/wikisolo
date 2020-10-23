@@ -7,6 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <% if logged_in? %>
+  Logged in as <%= current_user()['username'] %>
+
+  <form action="/logout" method="post">
+  <input type="hidden" name="_method" value="delete"> 
+    <button>Logout</button>
+  </form>
+
+  <% end %>
+
+  <% if !logged_in? %>
+
+  <form action="/login" method="get">
+    <button>Login</button>
+  </form>
+
+  <% end %>
 
   <%= yield %>
 

@@ -49,8 +49,8 @@ end
 
 
 post '/create' do
-  # redirect '/login' unless logged_in?
-  create_post(params['artist'], params['track'], params['genre'], params['instrument'], params['year'], params['solo_start'], params['youtube_url'], current_user['id'])
+  redirect '/login' unless logged_in?
+  create_post(params['artist'], params['track'], params['genre'], params['instrument'], params['year'], params['solo_start'], params['youtube_url'], current_user['user_id'])
 
   redirect '/'
 end
@@ -77,11 +77,28 @@ patch '/solo/:id' do
 end
 
 
-get '/login/' do
+get '/login' do
   erb :login
 end
 
 
+post '/login' do
+  user = find_user_by_email(params['email'])
+
+  if BCrypt::Password.new(user['password']).==(params['password'])
+    session[:user_id] = user['user_id']
+    redirect '/'
+  else
+    erb :login
+  end
+
+end
+
+
+delete '/logout' do
+  session[:user_id] = nil
+  redirect '/'
+end
 
 
 
