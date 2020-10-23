@@ -1,0 +1,21 @@
+<h1>Edit Post</h1>
+
+
+<form action="/solo/<%= solo['post_id'] %>" method="post">
+<input type="hidden" name="_method" value="patch">
+    <label for="">Artist</label>
+    <input type="text" name="artist" value="<%= solo['artist']%>">
+    <label for="">Song Title</label>
+    <input type="text" name="track" value="<%= solo['track']%>">
+    <label for="">Genre</label>
+    <input type="text" name="genre" value="<%= solo['genre']%>">
+    <label for="">Instrument</label>
+    <input type="text" name="instrument" value="<%= solo['instrument']%>">
+    <label for="">Year</label>
+    <input type="text" name="year" value="<%= solo['year']%>">
+    <label for="">Solo Starts At</label>
+    <input type="text" name="solo_start" value="<%= solo['solo_start']%>">
+    <label for="">YouTube URL</label>
+    <input type="text" name="youtube_url" value="<%= solo['youtube_url']%>">
+    <button>Update</button>
+</form>
