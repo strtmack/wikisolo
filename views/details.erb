@@ -1,1 +1,25 @@
 <h1><%= solo['artist'] %> - <%= solo['track'] %> </h1>
+
+
+<%= solo['youtube_url'] %>
+
+
+<p>Genre: <%= solo['genre'] %></p>
+<p>Year: <%= solo['year'] %></p>
+<p>Soloist: <%= solo['soloist'] %></p>
+<p>Instrument: <%= solo['instrument'] %></p>
+<p>Solo at: <%= solo['solo_start'].chop.chop.chop %></p>
+
+
+
+
+
+
+
+
+<p>Contributed by <%= user['username'] %></p>
+
+<form action="/solo/<%= solo['post_id'] %>/edit" method="get">
+<input type="hidden" name="user_id" value="<%= user['user_id']%>">
+    <Button>Edit</Button>
+</form>

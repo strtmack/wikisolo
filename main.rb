@@ -27,6 +27,13 @@ def create_account(username, email, password)
   run_sql(sql, [username, email, password_hash])
 end
 
+def user_access(id)
+  if current_user['user_id'] == id
+    true
+  else
+    false
+  end
+end
 
 
 get '/' do
@@ -50,6 +57,7 @@ post '/create_account' do
 end
 
 get '/solo/new' do
+  redirect '/login' unless logged_in?
   erb :new
 end
 
@@ -58,9 +66,10 @@ get '/solo/:id' do
   solo = find_post_by_id(params['id'])
   user = find_user_by_id(solo['user_id'])
 
+
   erb :details, locals: {
     solo: solo,
-    user: user
+    user: user,
   }
 end
 
@@ -80,6 +89,9 @@ end
 
 
 get '/solo/:id/edit' do
+
+  redirect '/login' unless logged_in? && user_access(params['user_id'])
+  
   solo = find_post_by_id(params['id'])
 
   erb :edit, locals: {
@@ -89,7 +101,7 @@ end
 
 
 patch '/solo/:id' do
-  update_post(params['id'], params['artist'], params['track'], params['genre'], params['instrument'], params['year'], params['solo_start'], params['youtube_url'])
+  update_post(params['id'], params['artist'], params['track'], params['genre'], params['instrument'], params['year'], params['solo_start'], params['soloist'])
   redirect "/solo/#{params['id']}"
 end
 

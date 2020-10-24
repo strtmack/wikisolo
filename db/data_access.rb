@@ -41,9 +41,9 @@ def delete_post(id)
 end
 
 
-def update_post(id, artist, track, genre, instrument, year, solo_start, youtube_url)
+def update_post(id, artist, track, genre, instrument, year, solo_start, soloist)
 
-    sql = "UPDATE posts SET artist = $1, track = $2, genre = $3, instrument = $4, year = $5, solo_start = $6, youtube_url = $7 WHERE post_id = $8;"
-    run_sql(sql, [artist, track, genre, instrument, year, solo_start, youtube_url, id])
+    sql = "UPDATE posts SET artist = $1, track = $2, genre = $3, instrument = $4, year = $5, solo_start = $6, soloist = $7 WHERE post_id = $8;"
+    run_sql(sql, [artist, track, genre, instrument, year, solo_start, soloist, id])
 end
 
