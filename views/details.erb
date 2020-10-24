@@ -19,7 +19,17 @@
 
 <p>Contributed by <%= user['username'] %></p>
 
-<form action="/solo/<%= solo['post_id'] %>/edit" method="get">
-<input type="hidden" name="user_id" value="<%= user['user_id']%>">
-    <Button>Edit</Button>
-</form>
+
+<% if logged_in? && user_access(user['user_id']) %>
+
+    <form action="/solo/<%= solo['post_id'] %>/edit" method="get">
+    <input type="hidden" name="user_id" value="<%= user['user_id']%>">
+        <Button>Edit</Button>
+    </form>
+
+    <form action="/solo/<%= solo['post_id'] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+        <button>Delete</button>
+    </form>
+
+<% end %>

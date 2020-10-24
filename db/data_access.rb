@@ -29,9 +29,9 @@ def all_posts()
 end
 
 
-def create_post(artist, track, genre, instrument, year, solo_start, youtube_url, user_id)
-    sql = "INSERT INTO posts (artist, track, genre, instrument, year, solo_start, youtube_url, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);"
-    run_sql(sql, [artist, track, genre, instrument, year, solo_start, youtube_url, user_id])
+def create_post(artist, track, genre, instrument, year, solo_start, youtube_url, soloist, user_id)
+    sql = "INSERT INTO posts (artist, track, genre, instrument, year, solo_start, youtube_url, soloist, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);"
+    run_sql(sql, [artist, track, genre, instrument, year, solo_start, youtube_url, soloist, user_id])
 end
 
 

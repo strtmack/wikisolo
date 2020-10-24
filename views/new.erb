@@ -4,19 +4,21 @@
 <form action="/create" method="post">
 
     <label for="">Artist</label>
-    <input type="text" name="artist">
+    <input type="text" name="artist" required>
     <label for="">Song Title</label>
-    <input type="text" name="track">
+    <input type="text" name="track" required>
     <label for="">Genre</label>
     <input type="text" name="genre">
+    <label for="">Soloist</label>
+    <input type="text" name="soloist">
     <label for="">Instrument</label>
     <input type="text" name="instrument">
     <label for="">Year</label>
-    <input type="text" name="year">
+    <input type="text" name="year" required>
     <label for="">Solo Starts At</label>
-    <input type="text" name="solo_start" placeholder="mm:ss">
-    <label for="">YouTube URL</label>
-    <input type="text" name="youtube_url">
+    <input type="text" name="solo_start" placeholder="mm:ss" required>
+    <label for="">YouTube Embed Code</label>
+    <input type="text" name="youtube_url" required>
     <button>Submit</button>
 
 </form>

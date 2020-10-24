@@ -76,7 +76,7 @@ end
 
 post '/create' do
   redirect '/login' unless logged_in?
-  create_post(params['artist'], params['track'], params['genre'], params['instrument'], params['year'], params['solo_start'], params['youtube_url'], current_user['user_id'])
+  create_post(params['artist'], params['track'], params['genre'], params['instrument'], params['year'], params['solo_start'], params['youtube_url'], params['soloist'], current_user['user_id'])
 
   redirect '/'
 end
