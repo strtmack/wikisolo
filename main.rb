@@ -150,3 +150,32 @@ get '/browse/soul-funk' do
     funk_posts: funk_posts
   }
 end
+
+get '/browse/metal' do
+  metal_posts = run_sql("SELECT * FROM posts WHERE genre = 'Metal';")
+  erb :metal, locals: {
+    metal_posts: metal_posts
+  }
+end
+
+get '/browse/latin' do
+  latin_posts = run_sql("SELECT * FROM posts WHERE genre = 'Latin';")
+  erb :latin, locals: {
+    latin_posts: latin_posts
+  }
+end
+
+get '/browse/afro' do
+  afro_posts = run_sql("SELECT * FROM posts WHERE genre = 'Afrobeat';")
+  erb :afro, locals: {
+    afro_posts: afro_posts
+  }
+end
+
+get '/browse/rock' do
+  rock_posts = run_sql("SELECT * FROM posts WHERE genre = 'Rock';")
+  erb :rock, locals: {
+    rock_posts: rock_posts
+  }
+end
+

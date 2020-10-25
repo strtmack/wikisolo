@@ -1,30 +1,41 @@
-<h1><%= solo['artist'] %> - <%= solo['track'] %> </h1>
+<section class="details-page">
 
-<div style="width: 560px; height: 360px">
-<%= solo['youtube_url'] %>
-</div>
+    <div style="width: 560px; height: 360px">
+    <%= solo['youtube_url'] %>
+    </div>
 
-<p>Genre: <%= solo['genre'] %></p>
-<p>Year: <%= solo['year'] %></p>
-<p>Soloist: <%= solo['soloist'] %></p>
-<p>Instrument: <%= solo['instrument'] %></p>
-<p>Solo at: <%= solo['solo_start'].chop.chop.chop %></p>
+    <div class="details-card">
+
+        <h1><%= solo['artist'] %> - <%= solo['track'] %> </h1>
 
 
-<p>Contributed by <%= user['username'] %></p>
-<a href="/browse"><p>Browse more solos.</p></a> 
+        <p>Genre: <%= solo['genre'] %></p>
+        <p>Year: <%= solo['year'] %></p>
+        <p>Soloist: <%= solo['soloist'] %></p>
+        <p>Instrument: <%= solo['instrument'] %></p>
+        <p>Solo at: <%= solo['solo_start'].chop.chop.chop %></p>
+
+        <% if logged_in? && user_access(user['user_id']) %>
+                <form action="/solo/<%= solo['post_id'] %>/edit" method="get">
+                <input type="hidden" name="user_id" value="<%= user['user_id']%>">
+                    <button class="author-btn">Edit</button>
+                </form>
+
+                <form action="/solo/<%= solo['post_id'] %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                    <button class="author-btn">Delete</button>
+                </form>
+
+        <% end %>
+
+    </div>
 
 
-<% if logged_in? && user_access(user['user_id']) %>
+</section>
 
-    <form action="/solo/<%= solo['post_id'] %>/edit" method="get">
-    <input type="hidden" name="user_id" value="<%= user['user_id']%>">
-        <Button>Edit</Button>
-    </form>
 
-    <form action="/solo/<%= solo['post_id'] %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-        <button>Delete</button>
-    </form>
+<footer class="details-footer">
+        <p>Contributed by <span class="username"><%= user['username'] %></span></p>
+        <a href="/browse"><p>Browse more solos</p></a> 
 
-<% end %>
+    </footer>

@@ -1,15 +1,15 @@
 /* PALETTE HEX
---dark grey: #222222
---paradise-pink: #ef476fff;
---orange-yellow-crayola: #ffd166ff;
---caribbean-green: #06d6a0ff;
---blue-ncs: #118ab2ff;
---midnight-green-eagle-green: #073b4cff;
+blue: #2D72FE
+lighter blue: #B3CCFB
+lightest blue: #EDF1FA
+yellow: #FFFF02
+
  */
 
 * {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -30,7 +30,16 @@ body {
     margin-bottom: 3px;
     font-size: .95rem;
     float: right;
-    border: 1px solid #222222;
+    border: none;
+    background: none;
+}
+
+.login-logout-btn:hover {
+    cursor: pointer;
+}
+
+.username {
+    color:#118ab2ff;
 }
 
 
@@ -70,11 +79,17 @@ iframe {
     padding: 3rem;
 }
 
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0.9rem;
+}
+
 .topnav {
     display: grid;
     background-color: #222222;
     overflow: hidden;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .topnav a {
@@ -87,7 +102,7 @@ iframe {
 
 .topnav a:first-child {
     text-align: left;
-    color: #06d6a0ff;
+    color: #FFFF02;
 }
 
 
@@ -140,7 +155,11 @@ iframe {
 .login-form button {
     margin-top: 1rem;
     padding: .5rem;
-    color: #118ab2ff;
+    color: #2D72FE;
+}
+
+.login-form button:hover {
+    cursor: pointer;
 }
 
 .login-form input {
@@ -171,6 +190,11 @@ iframe {
 .account-form button {
     margin-top: 1rem;
     padding: .5rem;
+    color: #2D72FE;
+}
+
+.account-form button:hover {
+    cursor: pointer;
 }
 
 .account-form input {
@@ -200,7 +224,12 @@ iframe {
 .submit-form button {
     margin-top: 1rem;
     padding: .5rem;
-    color: #118ab2ff;
+    color: #2D72FE;
+    background: none;
+}
+
+.submit-form button:hover {
+    cursor: pointer;
 }
 
 .submit-form input {
@@ -210,18 +239,20 @@ iframe {
 /* browse */
 
 .browse-genres {
-    padding: 3rem;
+    padding: 1rem 3rem;
 }
 
 .genre-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 80%;
+    margin-top: 3rem;
 }
 
 .genre-card {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    margin-bottom: 1rem;
 }
 
 .genre-card img {
@@ -237,4 +268,32 @@ iframe {
 
 .genre-page {
     padding: 1rem 3rem;
+}
+
+
+/* details */
+
+.details-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 3rem;
+}
+
+.details-page iframe {
+    margin-top: 1.5rem;
+}
+
+.details-card {
+    padding: 0 2rem;
+}
+
+.details-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem 5rem;
+    margin-top: 3rem;
+}
+
+.author-btn {
+    margin: 0.5rem 0;
 }
