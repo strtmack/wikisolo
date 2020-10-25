@@ -23,6 +23,11 @@ def find_post_by_id(id)
     return results[0]
 end
 
+def find_post_by_artist(artist)
+    results = run_sql("SELECT * FROM posts WHERE artist = $1;", [artist])
+    return results
+end
+
 
 def all_posts()
     run_sql("SELECT * FROM posts;")

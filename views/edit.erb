@@ -1,23 +1,28 @@
-<h1>Edit Post</h1>
+<section class="edit-page">
+
+    <h1>Edit Post</h1>
 
 
-<form action="/solo/<%= solo['post_id'] %>" method="post">
-<input type="hidden" name="_method" value="patch">
-    <label for="">Artist</label>
-    <input type="text" name="artist" value="<%= solo['artist']%>">
-    <label for="">Song Title</label>
-    <input type="text" name="track" value="<%= solo['track']%>">
-    <label for="">Genre</label>
-    <input type="text" name="genre" value="<%= solo['genre']%>">
-    <label for="">Year</label>
-    <input type="text" name="year" value="<%= solo['year']%>">
-    <label for="">Soloist</label>
-    <input type="text" name="soloist" value="<%= solo['soloist']%>">
-    <label for="">Instrument</label>
-    <input type="text" name="instrument" value="<%= solo['instrument']%>">
-    <label for="">Solo begins</label>
-    <input type="text" name="solo_start" value="<%= solo['solo_start'].chop.chop.chop %>" placeholder="mm:ss" required>
-    <%# <label for="">YouTube URL</label> %>
-    <%# <input type="text" name="youtube_url" value="<%= solo['youtube_url']%>
-    <button>Update</button>
-</form>
+    <form action="/solo/<%= solo['post_id'] %>" method="post" class="edit-form">
+    <input type="hidden" name="_method" value="patch">
+        <label for="">Artist</label>
+        <input type="text" name="artist" value="<%= solo['artist']%>" required>
+        <label for="">Song Title</label>
+        <input type="text" name="track" value="<%= solo['track']%>" required>
+        <label for="">Genre</label>
+        <input type="text" name="genre" value="<%= solo['genre']%>">
+        <label for="">Year</label>
+        <input type="text" name="year" value="<%= solo['year']%>" required>
+        <label for="">Soloist</label>
+        <input type="text" name="soloist" value="<%= solo['soloist']%>">
+        <label for="">Instrument</label>
+        <input type="text" name="instrument" value="<%= solo['instrument']%>">
+        <label for="">Solo begins</label>
+        <input type="text" name="solo_start" value="<%= solo['solo_start'].chop.chop.chop %>" placeholder="mm:ss" required>
+        <%# <label for="">YouTube URL</label> %>
+        <%# <input type="text" name="youtube_url" value="<%= solo['youtube_url']%>
+        <button>Update</button>
+    </form>
+
+
+</section>

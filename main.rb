@@ -193,3 +193,11 @@ get '/browse/rock' do
   }
 end
 
+get '/search-results' do
+  search = params['search']
+  artist_results = find_post_by_artist(search)
+  erb :search_results, locals: {
+    search: search,
+    artist_results: artist_results
+  }
+end

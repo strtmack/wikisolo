@@ -1,0 +1,15 @@
+<section class="search-page">
+
+<h1>Search Results</h1>
+<br>
+
+    <%# <% if artist_results. %>
+        <% artist_results.each do |result| %>
+                <div>
+                    <p><a href="/solo/<%= result['post_id'] %>"><%= result['artist']%> - <%= result['track'] %></a></p>
+                </div> 
+
+        <% end %>
+
+
+</section>

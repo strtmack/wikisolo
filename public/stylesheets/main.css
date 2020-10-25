@@ -297,13 +297,72 @@ iframe {
     padding: 1rem 5rem;
     margin-top: 3rem;
 }
-
+/* 
 .author-btn {
     margin: 0.5rem 0;
+} */
+
+.details-page form {
+    display: inline;
+    margin: 0 0.2rem;
 }
+
+.author-btn {
+    margin-top: 1rem;
+    padding: .5rem;
+    color: #2D72FE;
+    background: none;
+}
+
+.author-btn:hover {
+    cursor: pointer;
+}
+
 
 /* about */
 
 .about-page {
     padding: 3rem;
+}
+
+
+/* search */
+.search-page {
+    padding: 3rem;
+}
+
+
+/* edit post */
+
+.edit-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 45%;
+    margin: 1rem auto;
+    padding: 1rem 8rem;
+}
+
+.edit-page h1 {
+    text-align: center;
+}
+
+.edit-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 2rem;
+}
+
+.edit-form button {
+    margin-top: 1rem;
+    padding: .5rem;
+    color: #2D72FE;
+    background: none;
+}
+
+.edit-form button:hover {
+    cursor: pointer;
+}
+
+.edit-form input {
+    padding: 0.5rem;
 }
