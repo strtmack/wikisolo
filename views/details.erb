@@ -11,13 +11,8 @@
 <p>Solo at: <%= solo['solo_start'].chop.chop.chop %></p>
 
 
-
-
-
-
-
-
 <p>Contributed by <%= user['username'] %></p>
+<a href="/browse"><p>Browse more solos.</p></a> 
 
 
 <% if logged_in? && user_access(user['user_id']) %>

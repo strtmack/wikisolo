@@ -130,4 +130,23 @@ delete '/logout' do
 end
 
 
+get '/browse' do
+  erb :browse
+end
 
+
+get '/browse/jazz' do
+  jazz_posts = run_sql("SELECT * FROM posts WHERE genre = 'Jazz';")
+  erb :jazz, locals: {
+    jazz_posts: jazz_posts
+  }
+end
+
+get '/browse/soul-funk' do
+  soul_posts = run_sql("SELECT * FROM posts WHERE genre = 'Soul';")
+  funk_posts = run_sql("SELECT * FROM posts WHERE genre = 'Funk';")
+  erb :soul_funk, locals: {
+    soul_posts: soul_posts,
+    funk_posts: funk_posts
+  }
+end

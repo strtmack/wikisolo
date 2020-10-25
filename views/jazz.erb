@@ -1,0 +1,12 @@
+<section class="genre-page">
+
+    <h2>Jazz Solos</h2>
+
+    <% jazz_posts.each do |post| %>
+            <div style="width: 200px">
+            <p><a href="/solo/<%= post['post_id'] %>"><%= post['artist']%> - <%= post['track'] %></a></p>
+            </div>
+
+        <% end %>
+
+</section>
