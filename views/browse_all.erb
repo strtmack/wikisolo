@@ -1,8 +1,8 @@
 <section class="genre-page">
 
-    <h2>Browse: Latin</h2>
+    <h2>All Solos</h2>
 
-    <% latin_posts.each do |post| %>
+    <% posts.each do |post| %>
             <div>
             <p><a href="/solo/<%= post['post_id'] %>"><%= post['artist']%> - <%= post['track'] %></a></p>
             </div>

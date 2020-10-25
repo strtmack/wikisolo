@@ -130,8 +130,22 @@ delete '/logout' do
 end
 
 
+get '/about' do
+  erb :about
+end
+
+
 get '/browse' do
   erb :browse
+end
+
+
+get '/browse/all' do
+  posts = all_posts
+
+  erb :browse_all, locals: {
+    posts: posts
+  }
 end
 
 
