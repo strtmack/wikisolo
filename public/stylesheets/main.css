@@ -1,9 +1,175 @@
+* {
+    box-sizing: border-box;
+}
 
-
-
+iframe {
+    /* override other styles to make responsive */
+    width: 100% !important;
+    height: 100% !important;
+}
 
 /* text/image select color */
 ::selection {
     background-color: #013896;
     color: #f1f1f1;
-    }Lorem Ipsum
+}
+
+/* index */
+
+.topnav {
+    display: grid;
+    background-color: lightgrey;
+    overflow: hidden;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.topnav a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:first-child {
+    text-align: left;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login-logout-btn {
+    margin: 12px 8px;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.homepage-img {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.homepage-text-container {
+    padding: 3rem;
+}
+
+.homepage-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 3rem;
+}
+
+
+
+/* login */
+
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2rem auto;
+    width: 40%;
+    padding: 1rem 8rem;
+}
+
+.login-page h1 {
+    text-align: center;
+}
+
+.login-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 2rem;
+}
+
+.login-form button {
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+.login-form input {
+    padding: 0.5rem;
+}
+
+
+/* create account */
+
+.create-account-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2rem auto;
+    width: 44%;
+    padding: 1rem 8rem;
+}
+
+.create-account-page h1 {
+    text-align: center;
+}
+
+.account-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 2rem;
+}
+
+.account-form button {
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+.account-form input {
+    padding: 0.5rem;
+}
+
+/* new / submit solo */
+
+.submit-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 45%;
+    margin: 1rem auto;
+    padding: 1rem 8rem;
+}
+
+.submit-page h1 {
+    text-align: center;
+}
+
+.submit-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 2rem;
+}
+
+.submit-form button {
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+.submit-form input {
+    padding: 0.5rem;
+}

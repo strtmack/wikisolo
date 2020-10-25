@@ -3,29 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>WikiSolo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-  <a href="/">Home</a>
-  <% if logged_in? %>
-  Logged in as <%= current_user()['username'] %>
+  <div class="topnav" id="myTopnav">
+    <a href="/" class="">WikiSolo</a>
+    <a href="#">Browse</a>
+    <a href="/solo/new">Submit</a>
+    <a href="#about">About</a>
+    
+      <% if logged_in? %>
+        <a>Logged in as <%= current_user()['username'] %></a>
 
-  <form action="/logout" method="post">
-  <input type="hidden" name="_method" value="delete"> 
-    <button>Logout</button>
-  </form>
+        <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete"> 
+          <button class="login-logout-btn">Logout</button>
+        </form>
 
-  <% end %>
+      <% end %>
 
   <% if !logged_in? %>
 
   <form action="/login" method="get">
-    <button>Login</button>
+    <button class="login-logout-btn">Login</button>
   </form>
 
   <% end %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+</div>
+
 
   <%= yield %>
 

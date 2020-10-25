@@ -1,13 +1,26 @@
-<h1>WikiSolo</h1>
+<section class="welcome-grid">
+<div class="homepage-text-container">
+<h1>Lorem ipsum dolor</h1>
+<h3>"Guitar solos, to me, should be a really articulate way to make fun of guitar solos." - Josh Homme.</h3>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quis ratione, assumenda deserunt velit in vitae id voluptatibus eius cupiditate quae, aperiam nobis ad vel at nostrum aspernatur. Debitis, assumenda!</p>
+</div>
 
-<p><a href="/account/new">Create Account</p></a>
+<div class="homepage-img-container">
+<img class="homepage-img" src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-214315-GettyImages-84884490.jpg?resize=940,705&w=940" alt="">
+</div>
 
-<a href="/solo/new">Submit</a>
 
-<% posts.each do |post| %>
 
-    <p>
-        <a href="/solo/<%= post['post_id'] %>"><%= post['artist']%> - <%= post['track'] %></a>
-    </p>
+</section>
 
-<% end %>
+<section class="homepage-display">
+
+    <% posts.each do |post| %>
+        <div style="width: 200px">
+        <%= post['youtube_url'] %>
+        <p><a href="/solo/<%= post['post_id'] %>"><%= post['artist']%> - <%= post['track'] %></a></p>
+        </div>
+
+    <% end %>
+
+</section>
