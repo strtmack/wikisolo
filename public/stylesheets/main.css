@@ -17,6 +17,10 @@ body {
     color: black;
 }
 
+a {
+    color: #2D72FE;
+}
+
 
 .logged-in {
     float: right;
@@ -65,8 +69,8 @@ iframe {
 .homepage-img {
     display: block;
     width: 80%;
-    margin: 0 auto;
-    padding: 3rem;
+    margin: 1.5rem auto;
+    padding: 3rem 1rem;
 }
 
 .homepage-text-container {
@@ -365,4 +369,12 @@ iframe {
 
 .edit-form input {
     padding: 0.5rem;
+}
+
+/* footer */
+
+.site-footer {
+    margin-top: 5rem;
+    color: lightgray;
+    text-align: center;
 }
